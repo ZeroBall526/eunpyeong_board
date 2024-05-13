@@ -1,7 +1,5 @@
-"use client";
 
-import gettime from "@/app/_lib/time";
-import { senddb } from "@/app/_lib/send_db";
+"use client";
 
 export default function Final_quiz() {
 
@@ -45,16 +43,14 @@ export default function Final_quiz() {
             alert("답변을 안한 항목이 있어요! 다시 확인해주세요!")
 
         }else{
-
-            const sql = "insert into quiz values (null,"+q1+","+q2+","+q3+","+q4 +",'" + get_name + "','" + gettime + "')"
-            senddb(sql)
+            const link = window.location.pathname + "/send?q1="+ q1 +"&q2="+q2+"&q3="+q3+"&q4="+q4+"&get_name="+get_name
+            location.href = (link)
 
             console.log(get_name + "님의 답변");
             console.log("Q1:"+ q1);
             console.log("Q2:" + q2);
             console.log("Q3:"+ q3);
             console.log("Q4:"+ q4);
-            alert("전송 선공!")
         }
 
     };
