@@ -39,7 +39,7 @@ export default function About_question() {
                     </form>
                 </div>
 
-                <button onClick={getresult} className="bg-slate-50 text-xl text-black px-6 py-3 rounded-lg dark:focus:ring-gray-700 dark:text-gray-400 dark:bg-gray-800 dark:border-gray-600">제출하기!</button>
+                <button onClick={getresult} className="bg-slate-50 text-xl text-black px-6 py-3 rounded-md dark:focus:ring-gray-700 dark:text-gray-400 dark:bg-gray-800 dark:border-gray-600">제출하기!</button>
             </section>
             <footer  className="font-Pretenard justify-center">
                 <div className="font-medium text-center">

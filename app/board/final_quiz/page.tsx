@@ -1,9 +1,11 @@
-import { get } from "http";
-
 "use client";
+
+import gettime from "@/app/_lib/time";
+import { senddb } from "@/app/_lib/send_db";
+
 export default function Final_quiz() {
 
-    function getresult() {
+    async function getresult() {
         console.log("hello world");
 
         const get_name = document.getElementById("name").value;
@@ -43,6 +45,10 @@ export default function Final_quiz() {
             alert("답변을 안한 항목이 있어요! 다시 확인해주세요!")
 
         }else{
+
+            const sql = "insert into quiz values (null,"+q1+","+q2+","+q3+","+q4 +",'" + get_name + "','" + gettime + "')"
+            senddb(sql)
+
             console.log(get_name + "님의 답변");
             console.log("Q1:"+ q1);
             console.log("Q2:" + q2);
@@ -69,14 +75,14 @@ export default function Final_quiz() {
                         <br></br>통합적으로 가지고 노는 비 첨단 학문이다.</a>
                         <div className="pt-10 float: inline-start;">
                         <div className="flex items-center ps-4 border border-gray-200 rounded dark:border-gray-700">
-                            <input value="True" id="q1-1" type="radio" name="q1" className="w-7 h-7 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                            <input value="1" id="q1-1" type="radio" name="q1" className="w-7 h-7 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
                             </input>
-                            <label for="q1-1" class="w-full py-4 ms-2">⭕</label>
+                            <label htmlFor="q1-1" className="w-full py-4 ms-2">⭕</label>
                             </div>
                             <div className="flex items-center ps-4 border border-gray-200 rounded dark:border-gray-700">
-                            <input value="False" id="q1-2" type="radio" name="q1" className="w-7 h-7 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                            <input value="0" id="q1-2" type="radio" name="q1" className="w-7 h-7 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
                             </input>
-                            <label for="q1-2" class="w-full py-4 ms-2">❌</label>
+                            <label htmlFor="q1-2" className="w-full py-4 ms-2">❌</label>
                             </div>
                         </div>
                     </div>
@@ -89,14 +95,14 @@ export default function Final_quiz() {
                         </a>
                         <div className="pt-10 float: inline-start;">
                         <div className="flex items-center ps-4 border border-gray-200 rounded dark:border-gray-700">
-                            <input value="True" id="q2-1" type="radio" name="q2" className="w-7 h-7 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                            <input value="1" id="q2-1" type="radio" name="q2" className="w-7 h-7 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
                             </input>
-                            <label for="q2-1" class="w-full py-4 ms-2">⭕</label>
+                            <label htmlFor="q2-1" className="w-full py-4 ms-2">⭕</label>
                             </div>
                             <div className="flex items-center ps-4 border border-gray-200 rounded dark:border-gray-700">
-                            <input value="False" id="q2-2" type="radio" name="q2" className="w-7 h-7 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                            <input value="0" id="q2-2" type="radio" name="q2" className="w-7 h-7 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
                             </input>
-                            <label for="q2-2" class="w-full py-4 ms-2">❌</label>
+                            <label htmlFor="q2-2" className="w-full py-4 ms-2">❌</label>
                             </div>
                         </div>
                     </div>
@@ -109,14 +115,14 @@ export default function Final_quiz() {
                         </a>
                         <div className="pt-10 float: inline-start;">
                         <div className="flex items-center ps-4 border border-gray-200 rounded dark:border-gray-700">
-                            <input value="True" id="q2-1" type="radio" name="q3" className="w-7 h-7 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                            <input value="1" id="q3-1" type="radio" name="q3" className="w-7 h-7 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
                             </input>
-                            <label for="q2-1" class="w-full py-4 ms-2">⭕</label>
+                            <label htmlFor="q3-1" className="w-full py-4 ms-2">⭕</label>
                             </div>
                             <div className="flex items-center ps-4 border border-gray-200 rounded dark:border-gray-700">
-                            <input value="False" id="q2-2" type="radio" name="q3" className="w-7 h-7 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                            <input value="0" id="q3-2" type="radio" name="q3" className="w-7 h-7 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
                             </input>
-                            <label for="q2-2" class="w-full py-4 ms-2">❌</label>
+                            <label htmlFor="q3-2" className="w-full py-4 ms-2">❌</label>
                             </div>
                         </div>
                     </div>
@@ -128,14 +134,14 @@ export default function Final_quiz() {
                         </a>
                         <div className="pt-10 float: inline-start;">
                         <div className="flex items-center ps-4 border border-gray-200 rounded dark:border-gray-700">
-                            <input value="True" id="q2-1" type="radio" name="q4" className="w-7 h-7 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                            <input value="1" id="q4-1" type="radio" name="q4" className="w-7 h-7 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
                             </input>
-                            <label for="q2-1" class="w-full py-4 ms-2">⭕</label>
+                            <label htmlFor="q4-1" className="w-full py-4 ms-2">⭕</label>
                             </div>
                             <div className="flex items-center ps-4 border border-gray-200 rounded dark:border-gray-700">
-                            <input value="False" id="q2-2" type="radio" name="q4" className="w-7 h-7 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                            <input value="0" id="q4-2" type="radio" name="q4" className="w-7 h-7 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
                             </input>
-                            <label for="q2-2" class="w-full py-4 ms-2">❌</label>
+                            <label htmlFor="q4-2" className="w-full py-4 ms-2">❌</label>
                             </div>
                         </div>
                     </div>
