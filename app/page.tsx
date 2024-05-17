@@ -1,16 +1,6 @@
-import Image from "next/image";
-import executeQuery from "./_lib/db";
-import gettime from "./_lib/time";
+
 
 export default async function Home() {
-
-  const sql = 'select * from quiz'
-  const data = await executeQuery(sql, '')
-  const getdata = JSON.parse(JSON.stringify(data))
-  console.log("see data:")
-  console.log(getdata)
-
-  console.log(getdata.length)
 
   let q1=1
   let q2=1
