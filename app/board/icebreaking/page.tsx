@@ -1,7 +1,24 @@
 'use client'
 export default function Icebreaking() {
     async function getresult() {
-        alert("체출 완료!")
+        const get_name = document.getElementById("name").value;
+
+        const get_q1 = document.getElementsByName('q1');
+        var q1 = null;
+
+        for(var i=0;i<get_q1.length;i++) {
+            if(get_q1[i].checked == true) {
+                q1 = get_q1[i].value;
+            }
+        }
+
+        if(q1 == null || get_name == ""){
+            alert("답변을 안한 항목이 있어요! 다시 확인해주세요!")
+
+        }else{
+            const link = window.location.pathname + "/send=?name=" + get_name + "&answer=" + q1
+            location.href = (link)
+        }
     }
     return (
         <main>

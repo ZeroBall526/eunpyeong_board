@@ -10,12 +10,13 @@ export default function About_question() {
         }else{
             if (get_name == "") {
                 console.log("익명님의 의견");
-                get_name == null;
+                get_name == "익명";
             }else{
                 console.log(get_name + "님의 의견")
             }
             console.log("의견: " + get_detail)
-            alert("전송 선공!");
+            const link = window.location.pathname + "/send?name=" + get_name + "&detail=" + get_detail
+            location.href = (link)
         }
 
 
