@@ -4,8 +4,6 @@
 export default function Final_quiz() {
 
     async function getresult() {
-        console.log("hello world");
-
         const get_name = document.getElementById("name").value;
 
         const get_q1 = document.getElementsByName('q1');
