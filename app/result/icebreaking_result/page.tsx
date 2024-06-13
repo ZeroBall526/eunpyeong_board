@@ -9,7 +9,7 @@ export default async function icebreaking_result() {
     const read_data =(
         <div>
             {getdata.map(token =>
-                <div className="m-5 bg-slate-100 text-xl rounded-lg p-5">
+                <div className="m-5 bg-slate-100 text-xl rounded-lg p-5 dark:bg-slate-800">
                     <a> id : {token.id}</a>
                     <br></br>
                     <a>이름 : {token.name}</a>
