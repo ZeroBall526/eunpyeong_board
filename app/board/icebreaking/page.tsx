@@ -16,7 +16,7 @@ export default function Icebreaking() {
             alert("답변을 안한 항목이 있어요! 다시 확인해주세요!")
 
         }else{
-            const link = window.location.pathname + "/send=?name=" + get_name + "&answer=" + q1
+            const link = window.location.pathname + "/send?name=" + get_name + "&answer=" + q1
             location.href = (link)
         }
     }
@@ -40,17 +40,17 @@ export default function Icebreaking() {
                             <label htmlFor="q1-1" className="w-full py-4 ms-2">1</label>
                             </div>
                             <div className="flex items-center ps-4 border border-gray-200 rounded dark:border-gray-700">
-                            <input value="0" id="q1-2" type="radio" name="q1" className="w-7 h-7 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                            <input value="2" id="q1-2" type="radio" name="q1" className="w-7 h-7 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
                             </input>
                             <label htmlFor="q1-2" className="w-full py-4 ms-2">2</label>
                             </div>
                             <div className="flex items-center ps-4 border border-gray-200 rounded dark:border-gray-700">
-                            <input value="0" id="q1-3" type="radio" name="q1" className="w-7 h-7 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                            <input value="3" id="q1-3" type="radio" name="q1" className="w-7 h-7 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
                             </input>
                             <label htmlFor="q1-3" className="w-full py-4 ms-2">3</label>
                             </div>
                             <div className="flex items-center ps-4 border border-gray-200 rounded dark:border-gray-700">
-                            <input value="0" id="q1-4" type="radio" name="q1" className="w-7 h-7 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                            <input value="4" id="q1-4" type="radio" name="q1" className="w-7 h-7 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
                             </input>
                             <label htmlFor="q1-4" className="w-full py-4 ms-2">4</label>
                             

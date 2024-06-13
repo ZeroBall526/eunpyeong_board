@@ -8,14 +8,7 @@ export default function Question() {
             alert("답변을 안한 항목이 있어요! 다시 확인해주세요!");
 
         }else{
-            if (get_name == "") {
-                console.log("익명님의 의견");
-                get_name == "익명";
-            }else{
-                console.log(get_name + "님의 의견")
-            }
-            console.log("의견: " + get_detail)
-            const link = window.location.pathname + "/send=?name=" + get_name + "&detail=" + get_detail
+            const link = window.location.pathname + "/send?name=" + get_name + "&detail=" + get_detail
             location.href = (link)
         }
 
@@ -31,7 +24,7 @@ export default function Question() {
 
                 <div className="py-5 mb-6">
                     <label className = "dark:text-gray-400">이름을 적어주세요!(안적을시 익명으로 전송)</label>
-                    <input id="name" className="w-full font-medium bf-slate-50 px-6 py-3 text-black text-xl rounded-lg dark:text-gray-400 dark:bg-gray-800" placeholder="이름을 적어주세요!"></input>
+                    <input id="name" className="w-full font-medium bf-slate-50 px-6 py-3 text-black text-xl rounded-lg dark:text-gray-400 dark:bg-gray-800" placeholder="이름을 적어주세요!" defaultValue="익명"></input>
                 </div>
 
                 <div className="mb-6">
