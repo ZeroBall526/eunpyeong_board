@@ -25,8 +25,6 @@ export default async function Question_result() {
         <main>
             <p className="text-6xl py-10 font-bold">질문 게시판 보드</p>
             <p className="text-xl">데이터 갯수: {getdata.length} 개</p>
-            <br></br>
-            <p className="text-xl"> 정답은 1 0 1 0 입니다</p>
 
             {read_data}
 
