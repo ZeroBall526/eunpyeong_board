@@ -15,7 +15,7 @@ pool.getConnection((err, conn) => {
     conn.release()
 })
 
-const executeQuery = (query, arrParams) => {
+const executeQuery = (query: any, arrParams: any) => {
     return new Promise((resolve, reject) => {
         try {
             pool.query(query, arrParams, (err, data) => {
