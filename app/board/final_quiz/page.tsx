@@ -84,8 +84,8 @@ export default function Final_quiz() {
 
                 <div className="bg-slate-50 text-black text-2xl rounded-lg dark:bg-gray-800 dark:text-gray-400">
                     <div className="m-10 py-10">
-                        <a>2. 객체지향이란 하나의 정보나 상태를 여러객체로 나누어 
-                        표현함을 의미한다.
+                        <a>2. 마크업 언어인 HTML은 웹 사이트(페이지)를 만드는데
+                        사용된다.
                         </a>
                         <div className="pt-10 float: inline-start;">
                         <div className="flex items-center ps-4 border border-gray-200 rounded dark:border-gray-700">
@@ -124,7 +124,8 @@ export default function Final_quiz() {
 
                 <div className="bg-slate-50 text-black text-2xl rounded-lg dark:bg-gray-800 dark:text-gray-400">
                     <div className="m-10 py-10">
-                        <a>4. 한국 아이티 5대공룡을 ‘네카라쿠바’라 줄여 말한다.
+                        <a>4. 개발자는 웹, 애플리케이션 개발에 종속되지 않고<br></br> 
+                        다양한 분야와 연결하여 새로운 아이디어와 진로를 만들어 낼 수 있다.
                         </a>
                         <div className="pt-10 float: inline-start;">
                         <div className="flex items-center ps-4 border border-gray-200 rounded dark:border-gray-700">
