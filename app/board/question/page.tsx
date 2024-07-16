@@ -22,6 +22,10 @@ export default function Question() {
                 편하게 질문해주세요! 
                 </a>
 
+                <a className="text-red-600">
+                    (2024/7/17 수정) 질문내용에 따옴표(",') 넣지 마세요! 전송하는데 에러 발생합니다!
+                </a>
+
                 <div className="py-5 mb-6">
                     <label className = "dark:text-gray-400">이름을 적어주세요!(안적을시 익명으로 전송)</label>
                     <input id="name" className="w-full font-medium bf-slate-50 px-6 py-3 text-black text-xl rounded-lg dark:text-gray-400 dark:bg-gray-800" placeholder="이름을 적어주세요!" defaultValue="익명"></input>
