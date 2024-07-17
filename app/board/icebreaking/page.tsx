@@ -21,17 +21,17 @@ export default function Icebreaking() {
         }
     }
     return (
-        <main>
+        <main className="bg-slate-200">
             <section className="mx-[20px] font-Pretendard font-bold">
 
             <h1 className="text-3xl py-10">Icebreaking 🧊</h1>
 
             <div className="pl=1 mb-6">
-                <input id="name" className="w-full font-medium bf-slate-50 px-6 py-3 text-black text-xl rounded-lg dark:text-gray-400 dark:bg-gray-800" placeholder="이름을 적어주세요!"></input>
+                <input id="name" className="w-full font-medium bf-slate-50 px-4 py-3 text-black text-xl rounded-lg dark:text-gray-400 dark:bg-gray-800" placeholder="이름을 적어주세요!"></input>
             </div>
 
             <div className="bg-slate-50 text-black text-2xl rounded-lg dark:bg-gray-800 dark:text-gray-400">
-                    <div className="m-10 py-10">
+                    <div className="m-4 py-5">
                         <a> 멘토의 거짓정보를 하나 고르세요!</a>
                         <div className="pt-10 float: inline-start;">
                         <div className="flex items-center ps-4 border border-gray-200 rounded dark:border-gray-700">
@@ -62,11 +62,11 @@ export default function Icebreaking() {
             <button onClick={getresult} className="bg-slate-50 text-2xl text-black px-6 py-3 rounded-lg dark:focus:ring-gray-700 dark:text-gray-400 dark:bg-gray-800 dark:border-gray-600">제출하기!</button>
         </section>
 
-        <footer  className="font-Pretenard justify-center">
-                <div className="font-medium text-center">
-                Copyright 2024. 가람메. All rights reserved.
-                </div>
-        </footer>    
+            <footer className="font-Pretenard justify-center md:p-8 lg:p-10 translate-y-0 h-full mt-10">
+                    <div className="font-medium text-center mx-auto max-w-screen-xl">
+                    Copyright 2024. 가람메. All rights reserved.
+                    </div>
+            </footer>    
         </main>
     );
 } 
