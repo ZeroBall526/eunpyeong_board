@@ -24,7 +24,7 @@ export default async function icebreaking_result() {
 
     return (
         <main className="font-Pretendard">
-            <p className="text-6xl py-10 font-bold">퀴즈 게시판 보드</p>
+            <p className="text-6xl py-10 font-bold">아이스브레이킹 게시판 보드</p>
             <p className="text-xl">데이터 갯수: {getdata.length} 개</p>
             <br></br>
             <p className="text-xl">정답은 4번 입니다</p>

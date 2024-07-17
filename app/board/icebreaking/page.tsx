@@ -24,7 +24,7 @@ export default function Icebreaking() {
         <main className="bg-slate-200 dark:bg-black">
             <section className="mx-[20px] font-Pretendard font-bold">
 
-            <h1 className="text-3xl py-10">Icebreaking 🧊</h1>
+            <h1 className="text-4xl py-10">Icebreaking 🧊</h1>
 
             <div className="pl=1 mb-6">
                 <input id="name" className="w-full font-medium bf-slate-50 px-4 py-3 text-black text-xl rounded-lg dark:text-gray-400 dark:bg-gray-800" placeholder="이름을 적어주세요!"></input>

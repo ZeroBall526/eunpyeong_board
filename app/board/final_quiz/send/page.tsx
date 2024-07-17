@@ -9,7 +9,7 @@ export default async function getServerSideProps({ searchParams }){
     const q4 = searchParams.q4
     const get_name = searchParams.get_name
 
-    const sql = "insert into quiz values (null,"+q1+","+q2+","+q3+","+q4 +",'" + get_name + "','" + gettime + "')"
+    const sql = "insert ignore into quiz values (null,"+q1+","+q2+","+q3+","+q4 +",'" + get_name + "','" + gettime + "')"
 
     var mysql = require('mysql2')
 

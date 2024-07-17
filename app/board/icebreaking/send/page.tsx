@@ -6,7 +6,7 @@ export default async function getServerSideProps({ searchParams }){
     const name = searchParams.name
     const detail = searchParams.answer
 
-    const sql = "insert into icebreak values (null,'" + detail +"', '"+ name +"','"+ gettime +"')"
+    const sql = "insert ignore into icebreak values (null,'" + detail +"', '"+ name +"','"+ gettime +"')"
 
     var mysql = require('mysql2')
 
