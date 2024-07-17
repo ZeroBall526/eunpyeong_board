@@ -54,9 +54,9 @@ export default function Final_quiz() {
     };
 
     return(
-        <main className="bg-slate-200">
+        <main className="bg-slate-200 dark:bg-black">
             <section className="mx-[20px] font-Pretendard font-bold">
-                <h1 className="text-3xl py-10">퀴즈를 통하여📝<br></br>나도 컴퓨터공학 마스터</h1>
+                <h1 className="text-3xl py-10 ">퀴즈를 통하여📝<br></br>나도 컴퓨터공학 마스터</h1>
 
                 <div className="pl=1 mb-6">
                     <input id="name" className="w-full font-medium bf-slate-50 px-4 py-3 text-black text-xl rounded-lg dark:text-gray-400 dark:bg-gray-800" placeholder="이름을 적어주세요!"></input>
@@ -64,7 +64,7 @@ export default function Final_quiz() {
                     
 
                 <div className="bg-slate-50 text-black text-2xl rounded-lg dark:bg-gray-800 dark:text-gray-400">
-                    <div className="m-10 py-10">
+                    <div className="m-4 py-6">
                         <a>1. 컴퓨터공학이란 다양한 형태의 정보에 대해 기술을
                         <br></br>통합적으로 가지고 노는 비 첨단 학문이다.</a>
                         <div className="pt-10 float: inline-start;">
@@ -83,7 +83,7 @@ export default function Final_quiz() {
                 </div>
 
                 <div className="bg-slate-50 text-black text-2xl rounded-lg dark:bg-gray-800 dark:text-gray-400">
-                    <div className="m-10 py-10">
+                    <div className="m-4 py-6">
                         <a>2. 마크업 언어인 HTML은 웹 사이트(페이지)를 만드는데
                         사용된다.
                         </a>
@@ -103,7 +103,7 @@ export default function Final_quiz() {
                 </div>
 
                 <div className="bg-slate-50 text-black text-2xl rounded-lg dark:bg-gray-800 dark:text-gray-400">
-                    <div className="m-10 py-10">
+                    <div className="m-4 py-6">
                         <a>3. 사용자에게 보여주는 페이지를 만드는 개발자를
                         ‘Backend’라 부른다.
                         </a>
@@ -123,7 +123,7 @@ export default function Final_quiz() {
                 </div>
 
                 <div className="bg-slate-50 text-black text-2xl rounded-lg dark:bg-gray-800 dark:text-gray-400">
-                    <div className="m-10 py-10">
+                    <div className="m-4 py-6">
                         <a>4. 개발자는 웹, 애플리케이션 개발에 종속되지 않고<br></br> 
                         다양한 분야와 연결하여 새로운 아이디어와 진로를 만들어 낼 수 있다.
                         </a>
@@ -144,11 +144,11 @@ export default function Final_quiz() {
 
                 <button onClick={getresult} className="bg-slate-50 text-2xl text-black px-6 py-3 rounded-lg dark:focus:ring-gray-700 dark:text-gray-400 dark:bg-gray-800 dark:border-gray-600">제출하기!</button>
             </section>
-            <footer  className="font-Pretenard justify-center">
-                <div className="font-medium text-center">
+            <footer className="font-Pretenard justify-center md:p-8 lg:p-10 translate-y-0 h-full mt-4">
+                <div className="font-medium text-center mx-auto max-w-screen-xl">
                 Copyright 2024. 가람메. All rights reserved.
                 </div>
-            </footer>    
+            </footer>  
         </main>
     );
 } 

@@ -6,7 +6,8 @@ export default function Question() {
 
         if( get_detail == ""){
             alert("답변을 안한 항목이 있어요! 다시 확인해주세요!");
-
+        }else if( get_detail.includes("\"") || get_detail.includes("\'")){
+            alert("질문내용에 따옴표(EX: \",\') 넣지 마세요! 전송하는데 에러 발생합니다!");
         }else{
             const link = window.location.pathname + "/send?name=" + get_name + "&detail=" + get_detail
             location.href = (link)
@@ -15,7 +16,7 @@ export default function Question() {
     }
 
     return(
-        <main className="bg-slate-200">
+        <main className="bg-slate-200 dark:bg-black">
             <section className="mx-[10px] font-Pretendard font-semibold">
                 <h1 className="text-5xl py-10 font-semibold">QNA 타임!</h1>
                 <a className="text-xl py-3">수업을 들으며 궁금했던 부분이나 그 외에 궁금한 부분도

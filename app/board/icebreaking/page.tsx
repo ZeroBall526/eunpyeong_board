@@ -21,7 +21,7 @@ export default function Icebreaking() {
         }
     }
     return (
-        <main className="bg-slate-200">
+        <main className="bg-slate-200 dark:bg-black">
             <section className="mx-[20px] font-Pretendard font-bold">
 
             <h1 className="text-3xl py-10">Icebreaking 🧊</h1>
