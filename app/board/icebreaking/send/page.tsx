@@ -1,12 +1,23 @@
 import gettime from '@/app/_lib/time';
+import { getRouteMatcher } from 'next/dist/shared/lib/router/utils/route-matcher';
 import { redirect } from 'next/navigation'
 
 export default async function getServerSideProps({ searchParams }){
 
     const name = searchParams.name
     const detail = searchParams.answer
+    let result
 
-    const sql = "insert ignore into icebreak values (null,'" + detail +"', '"+ name +"','"+ gettime +"')"
+    if (detail == "4"){
+      result = "정답"
+    }else{
+      result = "X"
+    }
+
+    const sql = "insert ignore into icebreak(id,answer,name,result,date) values (?,?,?,?,?)"
+    const param = [null,detail,name,result,gettime]
+    
+    
 
     var mysql = require('mysql2')
 
@@ -18,7 +29,7 @@ export default async function getServerSideProps({ searchParams }){
       port: 3306,
     })
     pool.connect()
-    pool.query(sql, function (error: any, results: any, fields: any) {
+    pool.query( sql, param, function (error: any, results: any, fields: any) {
         if (error) {
          console.log(error);
          alert("전송 선공!")

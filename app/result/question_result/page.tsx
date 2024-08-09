@@ -3,7 +3,7 @@ import executeQuery from "@/app/_lib/db";
 export default async function Question_result() {
 
     const sql = 'select * from question'
-    const data = await executeQuery(sql, '')
+    const data = await executeQuery(sql)
     const getdata = JSON.parse(JSON.stringify(data))
 
     const read_data =(

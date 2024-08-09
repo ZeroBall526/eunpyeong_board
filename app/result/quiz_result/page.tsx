@@ -3,7 +3,7 @@ import executeQuery from "@/app/_lib/db"
 export default async function Quiz2_result() {
 
     const sql = 'select * from quiz'
-    const data = await executeQuery(sql, '')
+    const data = await executeQuery(sql)
     const getdata = JSON.parse(JSON.stringify(data))
     
     //const getdata = JSON.parse(JSON.stringify(data))
@@ -27,7 +27,7 @@ export default async function Quiz2_result() {
                     </div>
                     <a>제출 날짜 : {token.date}</a>
                     <br></br>
-                    <a>정답 유무 : {"asdf"}</a>
+                    <a>정답 유무 : {token.result}</a>
                 </div>
             ))
 

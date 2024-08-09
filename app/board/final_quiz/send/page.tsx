@@ -8,8 +8,17 @@ export default async function getServerSideProps({ searchParams }){
     const q3 = searchParams.q3
     const q4 = searchParams.q4
     const get_name = searchParams.get_name
+    let result
 
-    const sql = "insert ignore into quiz values (null,"+q1+","+q2+","+q3+","+q4 +",'" + get_name + "','" + gettime + "')"
+    if (q1 == 0 && q2 == 1 && q3 == 0 && q4 == 1){
+      result = "정답"
+    }else{
+      result = "X"
+    }
+
+    const sql = "insert ignore into quiz(id,quiz1,quiz2,quiz3,quiz4,name,date,result) values (?,?,?,?,?,?,?,?)"
+    const param = [null,q1,q2,q3,q4,get_name,gettime,result]
+
 
     var mysql = require('mysql2')
 
@@ -21,7 +30,7 @@ export default async function getServerSideProps({ searchParams }){
       port: 3306,
     })
     pool.connect()
-    pool.query(sql, function (error: any, results: any, fields: any) {
+    pool.query(sql, param, function (error: any, results: any, fields: any) {
         if (error) {
          console.log(error);
          alert("전송 선공!")

@@ -6,7 +6,9 @@ export default async function getServerSideProps({ searchParams }){
     const name = searchParams.name
     const detail = searchParams.detail
 
-    const sql = "insert into question values (null,'" + detail +"', '"+ name +"','"+ gettime +"')"
+    const sql = "insert into question(id,name,question,date) values (?,?,?,?)"
+
+    const param = [null , name , detail, gettime]
 
     var mysql = require('mysql2')
 
@@ -18,7 +20,7 @@ export default async function getServerSideProps({ searchParams }){
       port: 3306,
     })
     pool.connect()
-    pool.query(sql, function (error: any, results: any, fields: any) {
+    pool.query(sql, param, function (error: any, results: any, fields: any) {
         if (error) {
          console.log(error);
          alert("전송 선공!")

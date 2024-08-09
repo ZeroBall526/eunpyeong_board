@@ -15,10 +15,10 @@ pool.getConnection((err, conn) => {
     conn.release()
 })
 
-const executeQuery = (query: any, arrParams: any) => {
+const executeQuery = (query: any) => {
     return new Promise((resolve, reject) => {
         try {
-            pool.query(query, arrParams, (err, data) => {
+            pool.query(query, (err, data) => {
                 if (err) {
                     console.log('Error in executing the query')
                     reject(err)

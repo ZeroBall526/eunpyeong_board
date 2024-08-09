@@ -6,8 +6,6 @@ export default function Question() {
 
         if( get_detail == ""){
             alert("답변을 안한 항목이 있어요! 다시 확인해주세요!");
-        }else if( get_detail.includes("\"") || get_detail.includes("\'")){
-            alert("질문내용에 따옴표(EX: \",\') 넣지 마세요! 전송하는데 에러 발생합니다!");
         }else{
             const link = window.location.pathname + "/send?name=" + get_name + "&detail=" + get_detail
             location.href = (link)
@@ -24,9 +22,6 @@ export default function Question() {
                 </a>
 
                 <br></br>
-                <a className="text-red-600">
-                    (2024/7/17 수정) 질문내용에 따옴표(EX: ",') 넣지 마세요! 전송하는데 에러 발생합니다!
-                </a>
 
                 <div className="py-5 mb-6">
                     <label className = "dark:text-gray-400">이름을 적어주세요!(안적을시 익명으로 전송)</label>
