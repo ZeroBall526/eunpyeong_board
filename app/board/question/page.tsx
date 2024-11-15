@@ -1,14 +1,42 @@
 "use client";
-export default function Question() {
-    function getresult(){
-        const get_name = document.getElementById("name").value;
-        const get_detail = document.getElementById("detail").value;
 
-        if( get_detail == ""){
+import { useRouter } from 'next/navigation';
+
+export default function Question() {
+
+    const router = useRouter();
+
+    async function getresult(){
+        const get_name = (document.getElementById("name") as HTMLInputElement).value;
+        const get_detail = (document.getElementById("detail") as HTMLInputElement).value;
+
+        if( get_detail == "" && get_name == ""){
             alert("답변을 안한 항목이 있어요! 다시 확인해주세요!");
         }else{
+            /*
+            //depercated
             const link = window.location.pathname + "/send?name=" + get_name + "&detail=" + get_detail
             location.href = (link)
+            */
+
+            const response = await fetch('http://'+window.location.host+'/api/send', {
+                method: "POST",
+                headers: {
+                  'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                  type: "question",
+                  name: get_name,
+                  detail: get_detail
+                })
+              })
+            const result = await response.json()
+            
+            if(result.success){
+                router.push("/success")
+            }else{
+                alert('답변 전송중 오류가 발생했어요! 나중에 시도해주세요.')
+            }
         }
 
     }

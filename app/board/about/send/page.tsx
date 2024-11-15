@@ -2,7 +2,7 @@ import gettime from '@/app/_lib/time';
 import { redirect } from 'next/navigation'
 
 export default async function getServerSideProps({ searchParams }){
-
+//TODO : 인젝션 해결책 + 전송페이지 통합
     const name = searchParams.name
     const detail = searchParams.detail
 

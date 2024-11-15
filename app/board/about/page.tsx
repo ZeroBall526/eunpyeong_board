@@ -1,8 +1,14 @@
 "use client";
+
+import { useRouter } from 'next/navigation';
+
 export default function About_question() {
-    function getresult(){
-        const get_name = document.getElementById("name").value;
-        const get_detail = document.getElementById("detail").value;
+
+    const router = useRouter();
+
+    async function getresult(){
+        let get_name = (document.getElementById("name") as HTMLInputElement).value;
+        const get_detail = (document.getElementById("detail") as HTMLInputElement).value;
 
         if( get_detail == ""){
             alert("답변을 안한 항목이 있어요! 다시 확인해주세요!");
@@ -10,13 +16,35 @@ export default function About_question() {
         }else{
             if (get_name == "") {
                 console.log("익명님의 의견");
-                get_name == "익명";
+                get_name = "익명";
             }else{
                 console.log(get_name + "님의 의견")
             }
             console.log("의견: " + get_detail)
+            /*
+            //depercated
             const link = window.location.pathname + "/send?name=" + get_name + "&detail=" + get_detail
             location.href = (link)
+            */
+
+            const response = await fetch('http://'+window.location.host+'/api/send', {
+                method: "POST",
+                headers: {
+                  'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                  type: "about",
+                  name: get_name,
+                  detail: get_detail
+                })
+              })
+            const result = await response.json()
+            
+            if(result.success){
+                router.push("/success")
+            }else{
+                alert('답변 전송중 오류가 발생했어요! 나중에 시도해주세요.')
+            }
         }
 
 

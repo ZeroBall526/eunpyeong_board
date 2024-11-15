@@ -1,10 +1,14 @@
 
 "use client";
 
+import { useRouter } from 'next/navigation';
+
 export default function Final_quiz() {
 
+    const router = useRouter();
+
     async function getresult() {
-        const get_name = document.getElementById("name").value;
+        const get_name = (document.getElementById("name") as HTMLInputElement)?.value;
 
         const get_q1 = document.getElementsByName('q1');
         const get_q2 = document.getElementsByName('q2');
@@ -41,8 +45,33 @@ export default function Final_quiz() {
             alert("답변을 안한 항목이 있어요! 다시 확인해주세요!")
 
         }else{
+            /*
+            //depercated
             const link = window.location.pathname + "/send?q1="+ q1 +"&q2="+q2+"&q3="+q3+"&q4="+q4+"&get_name="+get_name
             location.href = (link)
+            */
+
+            const response = await fetch('http://'+window.location.host+'/api/send', {
+                method: "POST",
+                headers: {
+                  'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                  type: "quiz",
+                  q1: q1,
+                  q2: q2,
+                  q3: q3,
+                  q4: q4,
+                  get_name: get_name
+                })
+              })
+            const result = await response.json()
+            
+            if(result.success){
+                router.push("/success")
+            }else{
+                alert('답변 전송중 오류가 발생했어요! 나중에 시도해주세요.')
+            }
 
             console.log(get_name + "님의 답변");
             console.log("Q1:"+ q1);

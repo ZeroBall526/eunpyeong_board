@@ -7,7 +7,7 @@ export default async function board_home(){
         location.href = (link)
     }
     function Quiz(){
-        const link = window.location.pathname + "/final_quiz"
+        const link = window.location.pathname + "/quiz"
         location.href = (link)
     }
     function Question(){
