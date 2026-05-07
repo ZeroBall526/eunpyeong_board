@@ -1,20 +1,23 @@
 {
   "name": "eunpyeong_board",
-  "version": "0.1.0",
+  "version": "2.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev -H 0.0.0.0",
     "build": "next build",
     "start": "next start",
     "lint": "eslint"
   },
   "dependencies": {
-    "next": "16.2.5",
-    "react": "19.2.4",
-    "react-dom": "19.2.4"
+    "mysql2": "^3.22.3",
+    "next": "^16.2.5",
+    "react": "^19.2.6",
+    "react-dom": "^19.2.6"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
+    "@types/node": "25.6.0",
+    "@types/react": "19.2.14",
     "eslint": "^9",
     "eslint-config-next": "16.2.5",
     "tailwindcss": "^4"
