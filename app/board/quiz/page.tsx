@@ -30,7 +30,7 @@ export default function Final_quiz() {
             alert("답변을 안한 항목이 있어요! 다시 확인해주세요!")
 
         } else {
-            const response = await fetch('http://' + window.location.host + '/api/send', {
+            const response = await fetch('/api/send', {
                 method: "POST",
                 headers: {
                     'Content-Type': 'application/json',
